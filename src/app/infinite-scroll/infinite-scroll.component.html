@@ -1,0 +1,9 @@
+<!-- post-list.component.html -->
+<!-- Iterate through posts and apply visibility classes -->
+<div *ngFor="let post of posts; let i = index; trackBy: trackByFn"
+     [ngClass]="{ 'visible': visibilityStatus[i], 'hidden': !visibilityStatus[i] }">
+  <!-- Display post content with dynamic height -->
+  <div class="post" #post [style.height.px]="post.height">
+    {{ post.content }}
+  </div>
+</div>
